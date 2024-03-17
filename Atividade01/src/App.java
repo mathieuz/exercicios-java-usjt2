@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+
+        Scanner scanner = new Scanner(System.in);
+        Stack<String> stackFamiliares = new Stack<>();
+
+        while (true)
+        {
+            System.out.print("\nDigite o nome de um familiar (ou digite '0' e pressione 'enter' para encerrar): ");
+            String input = scanner.nextLine();
+
+            if (!(input.equals("0"))) {
+                stackFamiliares.push(input);
+
+            } else {
+                scanner.close();
+                break;
+
+            }
+        }
+
+        if (stackFamiliares.size() == 0) {
+            System.exit(0);
+
+        }
+
+        System.out.println("Nomes dos familiares: ");
+
+        for (String familiar : stackFamiliares) {
+            System.out.println("- " + familiar);
+
+        }
+    }
+}
